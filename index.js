@@ -34,9 +34,10 @@ function mainView () {
   return html`
     <body class="sans-serif bg-js-yellow">
       ${nav()}
-      <main class="ph4 cf">
+      <main class="ph4">
         ${speakers()}
         ${codeOfConduct()}
+        ${sponsor()}
       </main>
       ${footer()}
     </body>
@@ -65,7 +66,7 @@ function nav () {
 
 function speakers () {
   return html`
-    <section class="tl pt4 pt5-ns">
+    <section class="pt4 pt5-ns">
       <div class="mw9 center">
         <h2 class="f3 f2-ns ttu b ma0 bb bw2">
           Featuring amazing speakers
@@ -94,8 +95,8 @@ function speakers () {
 
 function codeOfConduct () {
   return html`
-    <section class="tl mt4 mt5-ns">
-      <div class="mw9 center">
+    <section class="mt4 mt5-ns">
+      <div class="mw9 center cf">
         <section class="fn fl-l w-100 w-40-l pr4-l">
           <h2 class="f3 f1-ns lh-title fw9 mb3 mt0 pt3 bt bw2">
             We care about human beings
@@ -123,9 +124,24 @@ function codeOfConduct () {
   `
 }
 
+function sponsor () {
+  return html`
+    <section class="mt4 mt5-ns">
+      <div class="mw9 center">
+        <h2 class="f3 f1-ns lh-title fw9 mb3 mt0 pv3 bt bb bw2">
+          Kindly sponsored by
+          <a href="http://co-up.de/" class="black link underline">
+            co.up coworking
+          </a>
+        </h2>
+      </div>
+    </section>
+  `
+}
+
 function footer () {
   return html`
-    <footer class="tl pa4 pv5-l">
+    <footer class="pa4 pv5-l cf">
       <div class="f5 lh-copy fl w-100">
         <div class="fl-ns w-100 w-20-l pr3-m pr4-l underline">
         <a href="http://twitter.com/berlinjs" class="black link dim b">
