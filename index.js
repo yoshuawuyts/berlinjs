@@ -10,6 +10,7 @@ var date = {
 }
 
 css('tachyons')
+
 css`
   .js-yellow { color: #f7df1e }
   .bg-js-yellow { background-color: #f7df1e }
@@ -17,12 +18,23 @@ css`
 
 var logo = css`
   :host {
-    font-size: 12rem;
+    font-size: 4rem;
     text-shadow:
+      -1px 1px black,
+      -2px 2px black,
       -3px 3px black,
-      -6px 6px black,
-      -9px 9px black,
-      -12px 12px black;
+      -4px 4px black;
+  }
+
+  @media screen and (min-width: 60em) {
+    :host {
+      font-size: 12rem;
+      text-shadow:
+        -3px 3px black,
+        -6px 6px black,
+        -9px 9px black,
+        -12px 12px black;
+    }
   }
 `
 
@@ -54,7 +66,7 @@ function nav () {
       </h1>
       <h2 class="f2 f1-ns b ttu mt0 pt5">
         ${date.dayOfWeek} ${date.date}
-        <br />
+        <br class="dn db-l"/>
         ${date.time} at
         <a href="https://goo.gl/maps/u6k4zWKcw5y" class="black link underline">
           co.up
