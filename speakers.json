@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Morgan Roderick",
+    "uri": "https:\/\/twitter.com\/mrgnrdrck",
+    "title": "Crafting lovely git narratives to enable software archaeology",
+    "description": "In this talk, I will share practices, tips, and techniques that I have learned, which make my everyday life with git easier."
+  },
+  {
+    "name": "Mims H. Wright",
+    "uri": "https:\/\/twitter.com\/mimshwright",
+    "title": "Mimstris: porting an arcade puzzle game to React \/ Redux",
+    "description": "I thought it would be fun to build a tetris clone so I could make weird-shaped pieces with my 4 year-old. But what started out as an innocent game tutorial soon became a semi-obsessive crash course in modern front-end concepts. It also is quite fun to play! Come watch as I retell my journey from nothing to a 60-line package.json file."
+  },
+  {
+    "name": "Felix Jung",
+    "uri": "https:\/\/twitter.com\/feju",
+    "title": "Upgrading to Webpack 2",
+    "description": "Webpack is a module bundler for JavaScript applications. The final version 2.2 was released in January. It supports tree-shaking for smaller builds. What I learned when upgrading and optimizing an Angular 1.5 project from Webpack 1 to Webpack 2."
+  }
+]

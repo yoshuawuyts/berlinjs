@@ -2,26 +2,12 @@ var html = require('choo/html')
 var css = require('sheetify')
 var choo = require('choo')
 
-var speakerData = [
-  {
-    name: 'Morgan Roderick',
-    uri: 'https://twitter.com/mrgnrdrck',
-    title: 'Crafting lovely git narratives to enable software archaeology',
-    description: 'In this talk, I will share practices, tips, and techniques that I have learned, which make my everyday life with git easier.'
-  },
-  {
-    name: 'Mims H. Wright',
-    uri: 'https://twitter.com/mimshwright',
-    title: 'Mimstris: porting an arcade puzzle game to React / Redux',
-    description: 'I thought it would be fun to build a tetris clone so I could make weird-shaped pieces with my 4 year-old. But what started out as an innocent game tutorial soon became a semi-obsessive crash course in modern front-end concepts. It also is quite fun to play! Come watch as I retell my journey from nothing to a 60-line package.json file.'
-  },
-  {
-    name: 'Felix Jung',
-    uri: 'https://twitter.com/feju',
-    title: 'Upgrading to Webpack 2',
-    description: 'Webpack is a module bundler for JavaScript applications. The final version 2.2 was released in January. It supports tree-shaking for smaller builds. What I learned when upgrading and optimizing an Angular 1.5 project from Webpack 1 to Webpack 2.'
-  }
-]
+var speakerData = require('./speakers.json')
+var date = {
+  dayOfWeek: 'Tuesday',
+  time: '7pm',
+  date: 'March 16th'
+}
 
 css('tachyons')
 css`
@@ -48,15 +34,11 @@ function mainView () {
   return html`
     <body class="sans-serif bg-js-yellow">
       ${nav()}
-      <main class="pa4">
-        <h2 class="f2 f1-ns b ttu mt0">
-          Tuesday March 16th
-          <br />
-          7pm at co.up
-        </h2>
+      <main class="ph4 cf">
         ${speakers()}
         ${codeOfConduct()}
       </main>
+      ${footer()}
     </body>
   `
 }
@@ -69,13 +51,21 @@ function nav () {
           berlinjs
         </span>
       </h1>
+      <h2 class="f2 f1-ns b ttu mt0 pt5">
+        ${date.dayOfWeek} ${date.date}
+        <br />
+        ${date.time} at
+        <a href="https://goo.gl/maps/u6k4zWKcw5y" class="black link underline">
+          co.up
+        </a>
+      </h2>
     </nav>
   `
 }
 
 function speakers () {
   return html`
-    <section class="tl mt4 mt6-ns">
+    <section class="tl pt4 pt5-ns">
       <div class="mw9 center">
         <h2 class="f3 f2-ns ttu b ma0 bb bw2">
           Featuring amazing speakers
@@ -108,7 +98,7 @@ function codeOfConduct () {
       <div class="mw9 center">
         <section class="fn fl-l w-100 w-40-l pr4-l">
           <h2 class="f3 f1-ns lh-title fw9 mb3 mt0 pt3 bt bw2">
-            We have a Code of Conduct
+            We care about human beings
           </h2>
         </section>
         <section class="lh-copy f5 f4-ns fl mt0-l measure">
@@ -130,5 +120,33 @@ function codeOfConduct () {
         </section>
       </div>
     </section>
+  `
+}
+
+function footer () {
+  return html`
+    <footer class="tl pa4 pv5-l">
+      <div class="f5 lh-copy fl w-100">
+        <div class="fl-ns w-100 w-20-l pr3-m pr4-l underline">
+        <a href="http://twitter.com/berlinjs" class="black link dim b">
+          We're on Twitter
+        </a>
+      </div>
+      <div class="fl-ns w-100 w-20-l pr3-m pr4-l underline">
+        <a href="http://www.meetup.com/Berlin-JS/" class="black link dim b">
+          And on Meetup
+        </a>
+      </div>
+      <div class="fl-ns w-100 w-20-l pr3-m pr4-l underline">
+        <a href="https://berlinjs-slack.herokuapp.com/" class="black link dim b">
+          We also have a Slack
+        </a>
+      </div>
+      <div class="fl-ns w-100 w-20-l pr3-m pr4-l underline">
+        <a href="http://groups.google.com/group/js-berlin" class="black link dim b">
+          And a mailing list
+        </a>
+      </div>
+    </footer>
   `
 }
